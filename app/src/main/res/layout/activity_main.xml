@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8AE4EF"
+    tools:context=".MainActivity">
+
+    <!-- พื้นหลังลายแมวน่ารักๆ และรอยเท้าแมว 🐾 🐱 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐰 🌸 🤍 🐰 🌸 "
+        android:textSize="36sp"
+        android:textColor="#30FFFFFF"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐰 🌸 🤍 🐰 🌸 "
+        android:textSize="36sp"
+        android:textColor="#30FFFFFF"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:letterSpacing="0.3" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <!-- การ์ดหลักสไตล์มินิมอล จัดกึ่งกลางหน้าจอ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="28dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!-- TextView 1: หัวข้อแอปพร้อม 🐱 -->
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🐱 บันทึกค่าใช้จ่ายประจำวัน"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D2B45"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="center" />
+
+                <!-- TextView 2: คำโปรย -->
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="จดทุกบาทที่ใช้วันนี้ให้ครบเลยนะ"
+                    android:textSize="14sp"
+                    android:textColor="#455A64"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center" />
+
+                <!-- TextView 3: หัวข้อจำนวนเงิน -->
+                <TextView
+                    android:id="@+id/tvAmountLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="โปรดใส่จำนวนเงินเป็น(บาท)"
+                    android:textColor="#1A237E"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <!-- EditText 1: ช่องกรอกจำนวนเงิน -->
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#E1F5FE"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="numberDecimal"
+                    android:hint="เช่น 100 หรือ 10.25"
+                    android:textSize="16sp"
+                    android:textColor="#0D2B45"
+                    android:textColorHint="#546E7A"
+                    android:gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="18dp"
+                    android:autofillHints="amount" />
+
+                <!-- TextView 4: หัวข้อคำอธิบาย -->
+                <TextView
+                    android:id="@+id/tvDescLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="คำอธิบาย"
+                    android:textColor="#1A237E"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <!-- EditText 2: ช่องกรอกคำอธิบาย -->
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#E1F5FE"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="text"
+                    android:hint="เช่น ข้าวกลางวัน,ค่าเดินทาง "
+                    android:textSize="16sp"
+                    android:textColor="#0D2B45"
+                    android:textColorHint="#546E7A"
+                    android:gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="24dp"
+                    android:autofillHints="description" />
+
+                <!-- แถวปุ่มกด (ปุ่มเคลียร์ และ ปุ่มเพิ่มรายการ) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <Button
+                        android:id="@+id/btnClear"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="เคลียร์"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#003366"
+                        app:backgroundTint="#B3E5FC"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/btnAdd"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="เพิ่มรายการ"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        app:backgroundTint="#0D47A1"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+                <!-- TextView 5: หัวข้อรายการล่าสุด (จัดกลาง) -->
+                <TextView
+                    android:id="@+id/tvRecentHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="รายการล่าสุด:"
+                    android:textColor="#1A237E"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- ส่วนแสดงผลรายการล่าสุด (จัดกลาง) -->
+                <TextView
+                    android:id="@+id/tvRecentItemContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E1F5FE"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="ยอมรวมวันนี้"
+                    android:textColor="#0D2B45"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
